@@ -34,15 +34,6 @@ public class WeatherDataFetcher2 {
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
 
         try (Producer<String, String> producer = new KafkaProducer<>(properties)) {
-//            while (true) {
-//                System.out.println("test11");
-//                String message = generateTempWeather();
-//                ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC_NAME, message);
-//                producer.send(record);
-//                System.out.println("New message: " + message);
-//                Thread.sleep(5000);
-//            }
-
              while (true) {
                  String message = getJson(city);
                  System.out.println("test2");
